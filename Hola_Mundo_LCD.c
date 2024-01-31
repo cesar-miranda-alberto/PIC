@@ -24,14 +24,16 @@
 #fuses HS,NOWDT,NOPUT,NOLVP,NOBROWNOUT,NODEBUG                                   // Fusibles que se utilizarán
 #use delay(clock=20M)                                                            // Establece velocidad del oscilador externo
 #include <lcd.c>                                                                 // Incluye la libreria de la lcd
-
+#use standard_io(D)                                                              // Define el puerto que se utilizará
 
 
 
 void main()                                                                      // Función Principal
 {  
    lcd_init();                                                                   // Inicialización de la pantalla lcd
-   
+   set_tris_d(0x00);                                                             // Establece los pines del puerto D como salidas
+   output_d(0x00);                                                               // Establece el estado inicial de los pines en estado bajo (APAGADO)
+           
    while(true)                                                                   // Ciclo para que siempre se ejecute el código
    {
       lcd_gotoxy(1,1);                                                           // Asigna cordenadas
