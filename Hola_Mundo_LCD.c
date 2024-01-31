@@ -1,11 +1,11 @@
 /*
             ***** LIQUID CRYSTAL DISPLAY HOLA MUNDO *****
             
-      El presente cÛdigo desarrollado en C tiene como finalidad la implementaciÛn del uso de la pantalla LCD donde
-      se mostrar· un texto y este se limpiar· cada determinado tiempo. El cÛdigo esta implementado en el microcontrolador
+      El presente c√≥digo desarrollado en C tiene como finalidad la implementaci√≥n del uso de la pantalla LCD donde
+      se mostrar√° un texto y este se limpiar√° cada determinado tiempo. El c√≥digo esta implementado en el microcontrolador
       PIC16F877A.
       Fecha: 16-Marzo-2021
-      VersiÛn: 1.0
+      Versi√≥n: 1.0
       
       donde:
       ------------------------------------------------
@@ -21,18 +21,18 @@
       
 */
 #include <16f877a.h>                                                             // Libreria del microcontrolador a utilizar
-#fuses HS,NOWDT,NOPUT,NOLVP,NOBROWNOUT,NODEBUG                                   // Fusibles que se utilizar·n
+#fuses HS,NOWDT,NOPUT,NOLVP,NOBROWNOUT,NODEBUG                                   // Fusibles que se utilizar√°n
 #use delay(clock=20M)                                                            // Establece velocidad del oscilador externo
 #include <lcd.c>                                                                 // Incluye la libreria de la lcd
 
 
 
 
-void main()                                                                      // FunciÛn Principal
+void main()                                                                      // Funci√≥n Principal
 {  
-   lcd_init();                                                                   // InicializaciÛn de la pantalla lcd
+   lcd_init();                                                                   // Inicializaci√≥n de la pantalla lcd
    
-   while(true)                                                                   // Ciclo para que siempre se ejecute el cÛdigo
+   while(true)                                                                   // Ciclo para que siempre se ejecute el c√≥digo
    {
       lcd_gotoxy(1,1);                                                           // Asigna cordenadas
       lcd_putc("\f");                                                            // Limpia el texto de la LCD
